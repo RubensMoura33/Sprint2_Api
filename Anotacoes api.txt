@@ -1,0 +1,7 @@
+domains - classes.
+
+controllers - autentitacao e autorizacao, metodos.
+
+repositories- Implementacao dos metodos(regras de negocio).
+
+Interfaces - Definicao dos metodos a serem implementados.
