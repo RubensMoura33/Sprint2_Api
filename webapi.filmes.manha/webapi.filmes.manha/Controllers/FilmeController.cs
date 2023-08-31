@@ -57,6 +57,32 @@ namespace webapi.filmes.manha.Controllers
             }
         }
 
+        /// <summary>
+        /// EndPoint que consulta um filme pelo seu id
+        /// </summary>
+        /// <param name="id">filme a ser buscado</param>
+        /// <returns>status code referente a operação e o objeto resultante da consulta</returns>
+        [HttpGet("{id}")]
+        public IActionResult Get(int id)
+        {
+            try
+            {
+                //retorna a lista resultante da requisição e seu status code de ok
+                if (_filmeRepository.BuscarPorId(id) == null)
+                {
+                    return StatusCode(404, "Objeto não encontrado.");
+                }
+                return Ok(_filmeRepository.BuscarPorId(id));
+
+            }
+            catch (Exception Erro)
+            {
+                //retorna um status code de erro
+                return BadRequest(Erro.Message);
+            }
+        }
+
+
         [HttpPost]
 
         public IActionResult Post(FilmeDomain novoFilme)
@@ -70,6 +96,98 @@ namespace webapi.filmes.manha.Controllers
             {
 
                 return BadRequest(erro.Message);
+            }
+        }
+
+        /// <summary>
+        /// EndPoint que aciona o metodo AtualizarIdCorpo
+        /// </summary>
+        /// <param name="filme">filme que sera alterado</param>
+        /// <returns>Status code de acordo com o resultado da operação</returns>
+        [HttpPut]
+        public IActionResult Put(FilmeDomain filme)
+        {
+            try
+            {
+                FilmeDomain filmeBuscado = _filmeRepository.BuscarPorId(filme.IdFilme);
+
+                if (filmeBuscado != null)
+                {
+                    try
+                    {
+                        _filmeRepository.AtualizarIdCorpo(filme);
+                        return Ok();
+                    }
+                    catch (Exception Erro)
+                    {
+                        //retorna um status code de erro
+                        return BadRequest(Erro.Message);
+                    }
+                }
+
+                throw new Exception();
+            }
+            catch
+            {
+                return NotFound("Filme não encontrado");
+            }
+
+        }
+
+        /// <summary>
+        /// EndPoint que deleta um filme da tabela filmes
+        /// </summary>
+        /// <param name="id">id do filme a ser deletado</param>
+        /// <returns>status code</returns>
+        [HttpDelete]
+        public IActionResult Delete(int id)
+        {
+            try
+            {
+                _filmeRepository.Deletar(id);
+
+                return StatusCode(202, "Filme deletado com sucesso.");
+            }
+            catch (Exception erro)
+            {
+
+                return BadRequest(erro.Message);
+            }
+
+        }
+
+        /// <summary>
+        /// EndPoint que aciona o metodo AtualizarIdUrl
+        /// </summary>
+        /// <param name="id">Id do filme que sera editado</param>
+        /// <param name="filme">Objeto que vai ser editado</param>
+        /// <returns>Status code</returns>
+        [HttpPatch("{id}")]
+        public IActionResult Patch(int id, FilmeDomain filme)
+        {
+            try
+            {
+                FilmeDomain filmeBuscado = _filmeRepository.BuscarPorId(id);
+
+                if (filmeBuscado != null)
+                {
+                    try
+                    {
+                        _filmeRepository.AtualizarIdUrl(id, filme);
+                        return Ok();
+                    }
+                    catch (Exception Erro)
+                    {
+                        //retorna um status code de erro
+                        return BadRequest(Erro.Message);
+                    }
+                }
+
+                throw new Exception();
+            }
+            catch
+            {
+                return NotFound("Filme não encontrado");
             }
         }
 

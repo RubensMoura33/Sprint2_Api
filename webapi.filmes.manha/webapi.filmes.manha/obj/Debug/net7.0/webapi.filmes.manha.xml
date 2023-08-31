@@ -20,6 +20,35 @@
             </summary>
             <returns>Retorna a resposta para o usuario(fromt-end)</returns>
         </member>
+        <member name="M:webapi.filmes.manha.Controllers.FilmeController.Get(System.Int32)">
+            <summary>
+            EndPoint que consulta um filme pelo seu id
+            </summary>
+            <param name="id">filme a ser buscado</param>
+            <returns>status code referente a operação e o objeto resultante da consulta</returns>
+        </member>
+        <member name="M:webapi.filmes.manha.Controllers.FilmeController.Put(webapi.filmes.manha.Domains.FilmeDomain)">
+            <summary>
+            EndPoint que aciona o metodo AtualizarIdCorpo
+            </summary>
+            <param name="filme">filme que sera alterado</param>
+            <returns>Status code de acordo com o resultado da operação</returns>
+        </member>
+        <member name="M:webapi.filmes.manha.Controllers.FilmeController.Delete(System.Int32)">
+            <summary>
+            EndPoint que deleta um filme da tabela filmes
+            </summary>
+            <param name="id">id do filme a ser deletado</param>
+            <returns>status code</returns>
+        </member>
+        <member name="M:webapi.filmes.manha.Controllers.FilmeController.Patch(System.Int32,webapi.filmes.manha.Domains.FilmeDomain)">
+            <summary>
+            EndPoint que aciona o metodo AtualizarIdUrl
+            </summary>
+            <param name="id">Id do filme que sera editado</param>
+            <param name="filme">Objeto que vai ser editado</param>
+            <returns>Status code</returns>
+        </member>
         <member name="P:webapi.filmes.manha.Controllers.GeneroController._generoRepository">
             <summary>
             Objeto _generoRepository que ira receber todos os metodos definidos na Interface IGeneroRepository
@@ -60,7 +89,7 @@
         </member>
         <member name="M:webapi.filmes.manha.Controllers.GeneroController.Put(System.Int32,webapi.filmes.manha.Domains.GeneroDomain)">
             <summary>
-            Endpoint que aciona o metodo ListarPorUrl
+            Endpoint que aciona o metodo AtualizarPorUrl
             </summary>
             <param name="id"></param>
             <param name="Genero"></param>

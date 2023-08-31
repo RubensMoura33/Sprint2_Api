@@ -1,12 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\webapi.filmes.manha",
-    "\\webapi.filmes.manha\\webapi.filmes.manha",
-    "\\webapi.filmes.manha\\webapi.filmes.manha\\Domains",
-    "\\webapi.filmes.manha\\webapi.filmes.manha\\Interfaces",
-    "\\webapi.filmes.manha\\webapi.filmes.manha\\Repositories"
+    "\\webapi.filmes.manha"
   ],
-  "SelectedNode": "\\webapi.filmes.manha\\webapi.filmes.manha\\Interfaces\\IGeneroRepository.cs",
+  "SelectedNode": "\\webapi.filmes.manha\\webapi.filmes.manha.sln",
   "PreviewInSolutionExplorer": false
 }

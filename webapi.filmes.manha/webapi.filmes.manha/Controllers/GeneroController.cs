@@ -143,13 +143,13 @@ namespace webapi.filmes.manha.Controllers
         }
 
         /// <summary>
-        /// Endpoint que aciona o metodo ListarPorUrl
+        /// Endpoint que aciona o metodo AtualizarPorUrl
         /// </summary>
         /// <param name="id"></param>
         /// <param name="Genero"></param>
         /// <returns></returns>
         /// 
-        [HttpPut("{id}")]
+        [HttpPatch("{id}")]
         public IActionResult Put(int id, GeneroDomain Genero)
         {
             try
