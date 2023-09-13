@@ -16,8 +16,8 @@ namespace webapi.filmes.manha.Repositories
         /// -SqlServer : User Id = Login; Pwd = Senha
         /// </summary>
 
-        //private string StringConexao = "Data Source = NOTE11-S13; Initial Catalog = Filmes; User Id = sa; Pwd = Senai@134 ";
-        private string StringConexao = "Data Source = R4ULM1LGR4U\\SQLEXPRESSS; Initial Catalog = Filmes; User Id = sa; Pwd = Binho$2022";
+        private string StringConexao = "Data Source = NOTE11-S13; Initial Catalog = Filmes; User Id = sa; Pwd = Senai@134 ";
+        //private string StringConexao = "Data Source = R4ULM1LGR4U\\SQLEXPRESSS; Initial Catalog = Filmes; User Id = sa; Pwd = Binho$2022";
         public void AtualizarIdCorpo(FilmeDomain filme)
         {
             using (SqlConnection con = new SqlConnection(StringConexao))

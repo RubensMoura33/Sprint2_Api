@@ -30,6 +30,8 @@ builder.Services.AddSwaggerGen(options =>
 });
 
 
+
+
 var app = builder.Build();
 
 //Comeca a configuracao do Swagger
